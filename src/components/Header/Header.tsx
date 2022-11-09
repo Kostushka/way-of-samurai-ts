@@ -1,12 +1,12 @@
+import logo from '../../img/logo.png';
+
+import styles from './Header.module.css';
+
 function Header() {
     return (
-        <>
-            <a href='#'>Home</a>
-            <br />
-            <a href='#'>Messages</a>
-            <br />
-            <a href='#'>News</a>
-        </>
+        <header className={styles.header}>
+            <img src={logo} alt='лого' />
+        </header>
     );
 }
 

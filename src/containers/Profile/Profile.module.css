@@ -1,0 +1,20 @@
+.main {
+    grid-area: m;
+    background-color: rgb(253, 255, 250);
+}
+.main img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+.main__block {
+    padding: 10px;
+}
+
+.main__block img {
+    display: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+}
