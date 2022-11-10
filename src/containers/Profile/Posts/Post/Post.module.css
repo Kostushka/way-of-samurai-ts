@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 6px;
+}
+
+.post__wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    min-width: 250px;
+    padding: 10px;
+    background: rgb(244 244 244);
+    border: 1px solid rgba(154, 163, 163, 0.322);
+    border-radius: 3px;
+}
