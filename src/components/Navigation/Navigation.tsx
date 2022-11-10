@@ -8,7 +8,7 @@ function Navigation() {
                     <a href='#'>Профиль</a>
                 </li>
                 <li>
-                    <a href='#'>Сообщение</a>
+                    <a href='#'>Сообщения</a>
                 </li>
                 <li>
                     <a href='#'>Новости</a>

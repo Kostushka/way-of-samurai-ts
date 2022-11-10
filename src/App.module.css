@@ -2,7 +2,8 @@
     display: grid;
     max-width: 100vw;
     grid-template-areas:
-        'h h h h h h'
-        'n m m m m m'
-        'f f f f f f';
+        'h h h h h h h h h h'
+        'n m m m m m m m m m'
+        'f f f f f f f f f f';
+    gap: 5px;
 }

@@ -1,6 +1,6 @@
 .header {
     grid-area: h;
-    background-color: rgb(195, 233, 233);
+    background: linear-gradient(45deg, rgb(242, 244, 235), #fddb92);
     padding: 10px;
 }
 .header img {
