@@ -7,3 +7,10 @@
         'f f f f f f f f f f';
     gap: 5px;
 }
+
+.main {
+    grid-area: m;
+    background-color: rgb(253, 255, 250);
+    width: 100vw;
+    border-radius: 5px;
+}

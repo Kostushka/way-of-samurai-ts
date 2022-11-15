@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.css';
 
 function Navigation() {
@@ -5,19 +6,21 @@ function Navigation() {
         <nav className={styles.nav}>
             <ul>
                 <li>
-                    <a href='#'>Профиль</a>
+                    <NavLink to={'/profile'}>Профиль</NavLink>
                 </li>
                 <li>
-                    <a href='#'>Сообщения</a>
+                    <NavLink to={'/dialogs'}>Сообщения</NavLink>
                 </li>
                 <li>
-                    <a href='#'>Новости</a>
+                    <NavLink to={'/news'} href='#'>
+                        Новости
+                    </NavLink>
                 </li>
                 <li>
-                    <a href='#'>Музыка</a>
+                    <NavLink to={'/music'}>Музыка</NavLink>
                 </li>
                 <li>
-                    <a href='#'>Настройки</a>
+                    <NavLink to={'/settings'}>Настройки</NavLink>
                 </li>
             </ul>
         </nav>
