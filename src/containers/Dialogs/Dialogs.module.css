@@ -1,0 +1,55 @@
+.container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+}
+
+.header {
+    font-size: 20px;
+}
+
+.dialogs {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dialogs ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.dialogs ul li {
+    padding-bottom: 10px;
+}
+
+.dialogs ul li a {
+    /* font-weight: 600; */
+    font-family: sans-serif;
+    transition: 0.3s;
+    text-decoration: none;
+    color: #000;
+}
+
+.dialogs ul li :global(a.active) {
+    color: rgb(149, 196, 41);
+    cursor: auto;
+}
+
+.messages {
+    margin: 30px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.messages ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.messages ul li {
+    padding-bottom: 10px;
+}
