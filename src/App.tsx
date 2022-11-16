@@ -8,7 +8,7 @@ import styles from './App.module.css';
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename='/way-of-samurai-ts/'>
             <div className={styles.container}>
                 <Header />
                 <Navigation />
