@@ -1,0 +1,22 @@
+.dialog {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.dialog li {
+    padding-bottom: 10px;
+}
+
+.dialog li a {
+    /* font-weight: 600; */
+    font-family: sans-serif;
+    transition: 0.3s;
+    text-decoration: none;
+    color: #000;
+}
+
+.dialog li :global(a.active) {
+    color: rgb(149, 196, 41);
+    cursor: auto;
+}

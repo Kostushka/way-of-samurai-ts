@@ -3,7 +3,7 @@ import styles from './Posts.module.css';
 
 function Posts() {
     return (
-        <div>
+        <div className={styles.wrapper}>
             <div className={styles.container}>
                 <div>Мои посты</div>
                 <textarea />
