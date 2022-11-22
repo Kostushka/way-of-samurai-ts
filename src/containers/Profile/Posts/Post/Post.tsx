@@ -3,6 +3,7 @@ import avatarImg from '../../../../img/avatar.jpg';
 import styles from './Post.module.css';
 
 type PostPropsType = {
+    id: number;
     message: string;
     likeCounts: number;
 };
