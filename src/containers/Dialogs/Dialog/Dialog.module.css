@@ -9,14 +9,20 @@
 }
 
 .dialog li a {
-    /* font-weight: 600; */
+    font-weight: 600;
+    padding: 0px 3px;
+    border-radius: 3px;
     font-family: sans-serif;
     transition: 0.3s;
     text-decoration: none;
     color: #000;
 }
+.dialog li a:hover {
+    background-color: #ffe5ad;
+}
 
 .dialog li :global(a.active) {
-    color: rgb(149, 196, 41);
+    color: rgb(118, 165, 7);
     cursor: auto;
+    background-color: #fff;
 }

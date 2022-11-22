@@ -4,7 +4,7 @@ import styles from './Navigation.module.css';
 function Navigation() {
     return (
         <nav className={styles.nav}>
-            <ul>
+            <ul className={styles.nav__list}>
                 <li>
                     <NavLink to={'/profile'}>Профиль</NavLink>
                 </li>
