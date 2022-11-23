@@ -9,20 +9,34 @@
 }
 
 .dialog li a {
-    font-weight: 600;
-    padding: 0px 3px;
-    border-radius: 3px;
-    font-family: sans-serif;
-    transition: 0.3s;
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: #000;
 }
-.dialog li a:hover {
-    background-color: #ffe5ad;
+
+.dialog li a span {
+    font-weight: 600;
+    border-radius: 3px;
+    font-family: sans-serif;
+    transition: 0.3s;
 }
+
+/* .dialog li a span:hover {
+    background-color: #ffe5ad;
+} */
 
 .dialog li :global(a.active) {
     color: rgb(118, 165, 7);
     cursor: auto;
     background-color: #fff;
+}
+
+.user__avatar {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 6px;
 }

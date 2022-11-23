@@ -7,10 +7,12 @@ type MessagePropsType = {
 
 function Message({ messages }: MessagePropsType) {
     const messagesList = messages.map((message) => (
-        <li key={message.id}>{message.message}</li>
+        <p className={styles.message} key={message.id}>
+            {message.message}
+        </p>
     ));
 
-    return <ul className={styles.message}>{messagesList}</ul>;
+    return <div className={styles.container}>{messagesList}</div>;
 }
 
 export default Message;

@@ -3,17 +3,22 @@ import AppRouter from './components/AppRouter/AppRouter';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import { StateType } from './type';
 
 import styles from './App.module.css';
 
-function App() {
+type AppPropsType = {
+    state: StateType;
+};
+
+function App({ state }: AppPropsType) {
     return (
         <BrowserRouter basename='/way-of-samurai-ts/'>
             <div className={styles.container}>
                 <Header />
-                <Navigation />
+                <Navigation friendsBlock={state.friendsBlock} />
                 <main className={styles.main}>
-                    <AppRouter />
+                    <AppRouter state={state} />
                 </main>
                 <Footer />
             </div>

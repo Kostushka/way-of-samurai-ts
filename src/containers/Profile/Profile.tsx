@@ -1,13 +1,18 @@
 import Posts from './Posts';
 import ProfileInfo from './ProfileInfo';
+import { ProfilePageType } from '../../type';
 
 import styles from './Profile.module.css';
 
-function Profile() {
+type ProfilePropsType = {
+    profilePage: ProfilePageType;
+};
+
+function Profile({ profilePage }: ProfilePropsType) {
     return (
         <>
             <ProfileInfo />
-            <Posts />
+            <Posts posts={profilePage.posts} />
         </>
     );
 }

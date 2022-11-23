@@ -9,7 +9,14 @@ type DialogPropsType = {
 function Dialog({ dialogs }: DialogPropsType) {
     const dialogsList = dialogs.map((dialog) => (
         <li key={dialog.id}>
-            <NavLink to={`/dialogs/${dialog.id}`}>{dialog.name}</NavLink>
+            <NavLink to={`/dialogs/${dialog.id}`}>
+                <img
+                    className={styles.user__avatar}
+                    src={dialog.img}
+                    alt={dialog.name}
+                />
+                <span>{dialog.name}</span>
+            </NavLink>
         </li>
     ));
 
