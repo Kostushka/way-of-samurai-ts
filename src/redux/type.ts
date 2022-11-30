@@ -1,6 +1,6 @@
-import { DialogsType, MessagesType } from './containers/Dialogs/type';
-import { FriendsType } from './containers/Friends/type';
-import { PostType } from './containers/Profile/Posts/type';
+import { DialogsType, MessagesType } from '../containers/Dialogs/type';
+import { FriendsType } from '../containers/Friends/type';
+import { PostType } from '../containers/Profile/Posts/type';
 
 export type DialogsPageType = {
     dialogNames: Array<DialogsType>;

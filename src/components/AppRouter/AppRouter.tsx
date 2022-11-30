@@ -5,7 +5,7 @@ import News from '../../containers/News';
 import Profile from '../../containers/Profile';
 import Settings from '../../containers/Settings';
 // import { routesConfig } from '../../routes/routesConfig';
-import { StateType } from '../../type';
+import { StateType } from '../../redux/type';
 
 type AppRouterPropsType = {
     state: StateType;

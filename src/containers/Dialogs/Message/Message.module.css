@@ -11,3 +11,20 @@
     margin-bottom: 2px;
     background-color: rgb(240, 240, 197);
 }
+
+.textarea {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px;
+    min-width: 300px;
+}
+
+.textarea textarea {
+    margin-bottom: 10px;
+    padding: 8px 10px;
+}
+
+.textarea button {
+    max-width: 150px;
+    min-height: 30px;
+}

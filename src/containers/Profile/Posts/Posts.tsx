@@ -1,3 +1,4 @@
+import { createRef } from 'react';
 import Post from './Post';
 import { PostType } from './type';
 
@@ -8,12 +9,18 @@ type PostsPropsType = {
 };
 
 function Posts({ posts }: PostsPropsType) {
+    const textareaRef = createRef<any>();
+    const addPostHandler = () => {
+        console.log(textareaRef.current.value);
+    };
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
                 <div>Мои посты</div>
-                <textarea />
-                <button className={styles.btn}>Добавить пост</button>
+                <textarea ref={textareaRef} />
+                <button className={styles.btn} onClick={addPostHandler}>
+                    Добавить пост
+                </button>
             </div>
             <Post posts={posts} />
         </div>

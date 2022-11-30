@@ -1,6 +1,6 @@
 import Dialog from './Dialog';
 import Message from './Message';
-import { DialogsPageType } from '../../type';
+import { DialogsPageType } from '../../redux/type';
 
 import styles from './Dialogs.module.css';
 

@@ -1,6 +1,6 @@
 import Posts from './Posts';
 import ProfileInfo from './ProfileInfo';
-import { ProfilePageType } from '../../type';
+import { ProfilePageType } from '../../redux/type';
 
 import styles from './Profile.module.css';
 

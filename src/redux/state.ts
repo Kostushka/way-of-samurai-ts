@@ -1,4 +1,4 @@
-import { StateType } from '../type';
+import { StateType } from './type';
 import user1Img from '../img/user1.jpg';
 import user2Img from '../img/user2.jpg';
 import user3Img from '../img/user3.jpg';

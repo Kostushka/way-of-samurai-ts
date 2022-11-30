@@ -3,7 +3,7 @@ import AppRouter from './components/AppRouter/AppRouter';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
-import { StateType } from './type';
+import { StateType } from './redux/type';
 
 import styles from './App.module.css';
 

@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import Friends from '../../containers/Friends';
-import { FriendsBlockType } from '../../type';
+import { FriendsBlockType } from '../../redux/type';
 import styles from './Navigation.module.css';
 
 type NavigationPropsType = {
