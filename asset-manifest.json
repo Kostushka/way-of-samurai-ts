@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/way-of-samurai-ts/static/css/main.4e70e9e6.css",
-    "main.js": "/way-of-samurai-ts/static/js/main.8e01607e.js",
-    "static/media/user3.jpg": "/way-of-samurai-ts/static/media/user3.a70ea2699d73a46eaae8.jpg",
-    "static/media/avatar.jpg": "/way-of-samurai-ts/static/media/avatar.1cc091f6b03aa2139f95.jpg",
-    "static/media/user2.jpg": "/way-of-samurai-ts/static/media/user2.4ba2a31be08da8889e91.jpg",
-    "static/media/friend1.jpg": "/way-of-samurai-ts/static/media/friend1.8ed9e6f8e6fea74c7343.jpg",
-    "static/media/user4.jpg": "/way-of-samurai-ts/static/media/user4.31e7c542038d3c27b7e2.jpg",
-    "static/media/header.jpg": "/way-of-samurai-ts/static/media/header.3ec23ed407c5e29c9f13.jpg",
-    "static/media/friend2.jpg": "/way-of-samurai-ts/static/media/friend2.5fe041ffa1466582ee06.jpg",
-    "static/media/user1.jpg": "/way-of-samurai-ts/static/media/user1.c88c5233bf9653f54746.jpg",
-    "static/media/friend3.jpg": "/way-of-samurai-ts/static/media/friend3.c6a664539fc09b6a167c.jpg",
-    "static/media/user5.jpg": "/way-of-samurai-ts/static/media/user5.aad63fce38c2ddf6904a.jpg",
-    "static/media/logo.png": "/way-of-samurai-ts/static/media/logo.04c72033d9a4685e3ab0.png",
+    "main.css": "/way-of-samurai-ts/static/css/main.175ef04d.css",
+    "main.js": "/way-of-samurai-ts/static/js/main.69036aef.js",
+    "static/media/avatar.jpg": "/way-of-samurai-ts/static/media/avatar.fdb0081fbcf3f921f6c8.jpg",
+    "static/media/user5.jpg": "/way-of-samurai-ts/static/media/user5.4e240f879ddbef1e02ab.jpg",
+    "static/media/user2.jpg": "/way-of-samurai-ts/static/media/user2.628da2686e3184459482.jpg",
+    "static/media/user3.jpg": "/way-of-samurai-ts/static/media/user3.ecde3b277d350d0f359d.jpg",
+    "static/media/header.jpg": "/way-of-samurai-ts/static/media/header.5d7236c798b3ceab60ed.jpg",
+    "static/media/friend1.jpg": "/way-of-samurai-ts/static/media/friend1.051ae482ac3949991791.jpg",
+    "static/media/user4.jpg": "/way-of-samurai-ts/static/media/user4.edc3fded21ecb647a498.jpg",
+    "static/media/friend2.jpg": "/way-of-samurai-ts/static/media/friend2.c0c1e4c0eb0b85ed1908.jpg",
+    "static/media/user1.jpg": "/way-of-samurai-ts/static/media/user1.aa64d161da890d384839.jpg",
+    "static/media/friend3.jpg": "/way-of-samurai-ts/static/media/friend3.9124d267133fa2e0768f.jpg",
+    "static/media/logo.png": "/way-of-samurai-ts/static/media/logo.5cc2a3c0878a3396fc79.png",
     "index.html": "/way-of-samurai-ts/index.html",
-    "main.4e70e9e6.css.map": "/way-of-samurai-ts/static/css/main.4e70e9e6.css.map",
-    "main.8e01607e.js.map": "/way-of-samurai-ts/static/js/main.8e01607e.js.map"
+    "main.175ef04d.css.map": "/way-of-samurai-ts/static/css/main.175ef04d.css.map",
+    "main.69036aef.js.map": "/way-of-samurai-ts/static/js/main.69036aef.js.map"
   },
   "entrypoints": [
-    "static/css/main.4e70e9e6.css",
-    "static/js/main.8e01607e.js"
+    "static/css/main.175ef04d.css",
+    "static/js/main.69036aef.js"
   ]
 }
