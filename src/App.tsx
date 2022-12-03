@@ -4,21 +4,26 @@ import Header from './components/Header';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import { StateType } from './redux/type';
-
 import styles from './App.module.css';
 
 type AppPropsType = {
     state: StateType;
+    addDialogMessage: (message: string) => void;
+    addPostMessage: (message: string) => void;
 };
 
-function App({ state }: AppPropsType) {
+function App({ state, addDialogMessage, addPostMessage }: AppPropsType) {
     return (
         <BrowserRouter basename='/way-of-samurai-ts/'>
             <div className={styles.container}>
                 <Header />
                 <Navigation friendsBlock={state.friendsBlock} />
                 <main className={styles.main}>
-                    <AppRouter state={state} />
+                    <AppRouter
+                        state={state}
+                        addDialogMessage={addDialogMessage}
+                        addPostMessage={addPostMessage}
+                    />
                 </main>
                 <Footer />
             </div>

@@ -9,23 +9,44 @@ import { StateType } from '../../redux/type';
 
 type AppRouterPropsType = {
     state: StateType;
+    addDialogMessage: (message: string) => void;
+    addPostMessage: (message: string) => void;
 };
 
-function AppRouter({ state }: AppRouterPropsType) {
+function AppRouter({
+    state,
+    addDialogMessage,
+    addPostMessage,
+}: AppRouterPropsType) {
     return (
         <>
             <Route
                 path={'/'}
-                render={() => <Profile profilePage={state.profilePage} />}
+                render={() => (
+                    <Profile
+                        profilePage={state.profilePage}
+                        addPostMessage={addPostMessage}
+                    />
+                )}
                 exact
             />
             <Route
                 path={'/profile'}
-                render={() => <Profile profilePage={state.profilePage} />}
+                render={() => (
+                    <Profile
+                        profilePage={state.profilePage}
+                        addPostMessage={addPostMessage}
+                    />
+                )}
             />
             <Route
                 path={'/dialogs'}
-                render={() => <Dialogs dialogsPage={state.dialogsPage} />}
+                render={() => (
+                    <Dialogs
+                        dialogsPage={state.dialogsPage}
+                        addDialogMessage={addDialogMessage}
+                    />
+                )}
             />
             <Route path={'/news'} render={() => <News />} />
             <Route path={'/music'} render={() => <Music />} />

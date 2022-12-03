@@ -6,9 +6,10 @@ import styles from './Dialogs.module.css';
 
 type DialogsPropsType = {
     dialogsPage: DialogsPageType;
+    addDialogMessage: (message: string) => void;
 };
 
-function Dialogs({ dialogsPage }: DialogsPropsType) {
+function Dialogs({ dialogsPage, addDialogMessage }: DialogsPropsType) {
     return (
         <div className={styles.container}>
             <div className={styles.dialogs}>
@@ -17,7 +18,10 @@ function Dialogs({ dialogsPage }: DialogsPropsType) {
             </div>
             <div className={styles.messages}>
                 <h1 className={styles.header}>Сообщения</h1>
-                <Message messages={dialogsPage.dialogMessages} />
+                <Message
+                    messages={dialogsPage.dialogMessages}
+                    addDialogMessage={addDialogMessage}
+                />
             </div>
         </div>
     );

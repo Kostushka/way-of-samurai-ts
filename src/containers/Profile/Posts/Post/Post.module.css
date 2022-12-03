@@ -1,7 +1,11 @@
 .container {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin: 20px 0px;
+    padding: 10px;
+    background-color: rgb(242, 255, 200);
+    border: 1px solid rgb(238, 255, 183);
+    border-radius: 3px;
 }
 
 .avatar {
@@ -16,10 +20,13 @@
 .post__wrapper {
     display: flex;
     flex-direction: column;
+    white-space: pre-line;
+    overflow: auto;
+    word-break: break-all;
 }
 
 .message {
-    min-width: 250px;
+    max-width: 1000px;
     padding: 10px;
     background: rgb(244 244 244);
     border: 1px solid rgba(154, 163, 163, 0.322);

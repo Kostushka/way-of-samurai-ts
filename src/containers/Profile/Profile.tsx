@@ -6,13 +6,14 @@ import styles from './Profile.module.css';
 
 type ProfilePropsType = {
     profilePage: ProfilePageType;
+    addPostMessage: (message: string) => void;
 };
 
-function Profile({ profilePage }: ProfilePropsType) {
+function Profile({ profilePage, addPostMessage }: ProfilePropsType) {
     return (
         <>
             <ProfileInfo />
-            <Posts posts={profilePage.posts} />
+            <Posts posts={profilePage.posts} addPostMessage={addPostMessage} />
         </>
     );
 }
