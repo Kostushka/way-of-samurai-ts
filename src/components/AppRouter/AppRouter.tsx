@@ -10,13 +10,17 @@ import { StateType } from '../../redux/type';
 type AppRouterPropsType = {
     state: StateType;
     addDialogMessage: (message: string) => void;
-    addPostMessage: (message: string) => void;
+    addPostMessage: () => void;
+    updatePostTextareaValue: (newText: string) => void;
+    errorHandler: (errorValue: boolean) => void;
 };
 
 function AppRouter({
     state,
     addDialogMessage,
     addPostMessage,
+    updatePostTextareaValue,
+    errorHandler,
 }: AppRouterPropsType) {
     return (
         <>
@@ -26,6 +30,8 @@ function AppRouter({
                     <Profile
                         profilePage={state.profilePage}
                         addPostMessage={addPostMessage}
+                        updatePostTextareaValue={updatePostTextareaValue}
+                        errorHandler={errorHandler}
                     />
                 )}
                 exact
@@ -36,6 +42,8 @@ function AppRouter({
                     <Profile
                         profilePage={state.profilePage}
                         addPostMessage={addPostMessage}
+                        updatePostTextareaValue={updatePostTextareaValue}
+                        errorHandler={errorHandler}
                     />
                 )}
             />

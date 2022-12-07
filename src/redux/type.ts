@@ -9,6 +9,8 @@ export type DialogsPageType = {
 
 export type ProfilePageType = {
     posts: Array<PostType>;
+    postTextareaValue: string;
+    error: boolean;
 };
 
 export type FriendsBlockType = {

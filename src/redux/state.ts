@@ -8,6 +8,8 @@ import friend1Img from '../img/friend1.jpg';
 import friend2Img from '../img/friend2.jpg';
 import friend3Img from '../img/friend3.jpg';
 import { rerenderEntireTree } from '../render';
+import { MessagesType } from '../containers/Dialogs/type';
+import { PostType } from '../containers/Profile/Posts/type';
 
 export const state: StateType = {
     dialogsPage: {
@@ -34,6 +36,8 @@ export const state: StateType = {
             { id: 4, message: 'Hey!', likeCounts: 8 },
             { id: 5, message: 'Hey!', likeCounts: 10 },
         ],
+        postTextareaValue: '',
+        error: false,
     },
     friendsBlock: {
         friends: [
@@ -45,8 +49,8 @@ export const state: StateType = {
 };
 
 export const addDialogMessage = (message: string) => {
-    const newMessage = {
-        id: 6,
+    const newMessage: MessagesType = {
+        id: Math.random(),
         message,
     };
     state.dialogsPage.dialogMessages.push(newMessage);
@@ -57,12 +61,23 @@ export const addDialogMessage = (message: string) => {
     // };
 };
 
-export const addPostMessage = (message: string) => {
-    const newPost = {
-        id: 6,
-        message,
+export const addPostMessage = () => {
+    const newPost: PostType = {
+        id: Math.random(),
+        message: state.profilePage.postTextareaValue,
         likeCounts: 0,
     };
     state.profilePage.posts.push(newPost);
+    state.profilePage.postTextareaValue = '';
+    rerenderEntireTree(state);
+};
+
+export const updatePostTextareaValue = (newText: string) => {
+    state.profilePage.postTextareaValue = newText;
+    rerenderEntireTree(state);
+};
+
+export const errorHandler = (errorValue: boolean) => {
+    state.profilePage.error = errorValue;
     rerenderEntireTree(state);
 };

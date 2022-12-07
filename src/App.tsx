@@ -9,10 +9,18 @@ import styles from './App.module.css';
 type AppPropsType = {
     state: StateType;
     addDialogMessage: (message: string) => void;
-    addPostMessage: (message: string) => void;
+    addPostMessage: () => void;
+    updatePostTextareaValue: (newText: string) => void;
+    errorHandler: (errorValue: boolean) => void;
 };
 
-function App({ state, addDialogMessage, addPostMessage }: AppPropsType) {
+function App({
+    state,
+    addDialogMessage,
+    addPostMessage,
+    updatePostTextareaValue,
+    errorHandler,
+}: AppPropsType) {
     return (
         <BrowserRouter basename='/way-of-samurai-ts/'>
             <div className={styles.container}>
@@ -23,6 +31,8 @@ function App({ state, addDialogMessage, addPostMessage }: AppPropsType) {
                         state={state}
                         addDialogMessage={addDialogMessage}
                         addPostMessage={addPostMessage}
+                        updatePostTextareaValue={updatePostTextareaValue}
+                        errorHandler={errorHandler}
                     />
                 </main>
                 <Footer />

@@ -7,30 +7,52 @@ import styles from './Posts.module.css';
 import UiTextarea from '../../../components/UiTextarea';
 
 type PostsPropsType = {
+    postTextareaValue: string;
+    errorValue: boolean;
     posts: Array<PostType>;
-    addPostMessage: (message: string) => void;
+    addPostMessage: () => void;
+    updatePostTextareaValue: (newText: string) => void;
+    errorHandler: (errorValue: boolean) => void;
 };
 
-function Posts({ posts, addPostMessage }: PostsPropsType) {
+function Posts({
+    posts,
+    errorValue,
+    addPostMessage,
+    postTextareaValue,
+    updatePostTextareaValue,
+    errorHandler,
+}: PostsPropsType) {
     // стейт для поля ввода и ошибки
-    const [textareaValue, setTextareaValue] = useState<string>('');
-    const [error, setError] = useState<boolean>(false);
-    // const textareaRef = createRef<any>();
+    // const [textareaValue, setTextareaValue] = useState<string>('');
+    // const [error, setError] = useState<boolean>(false);
+    const textareaRef = createRef<any>();
 
     // обработчик для поля ввода
-    const textareaChangeHandler = (value: string) => {
-        setTextareaValue(value);
-        setError(false);
+    // const textareaChangeHandler = (value: string) => {
+    //     setTextareaValue(value);
+    //     setError(false);
+    // };
+    const textareaChangeHandler = () => {
+        updatePostTextareaValue(textareaRef.current.value);
+        errorHandler(false);
     };
     // обработчик для отправки поста по нажатию кнпоки
+    // const addPostHandler = () => {
+    //     if (textareaValue.trim()) {
+    //         addPostMessage(textareaValue.trim());
+    //     } else {
+    //         setError(true);
+    //     }
+    //     setTextareaValue('');
+    // };
     const addPostHandler = () => {
         // addPostMessage(textareaRef.current.value);
         // textareaRef.current.value = '';
-        if (textareaValue.trim()) {
-            addPostMessage(textareaValue.trim());
-            setTextareaValue('');
+        if (textareaRef.current.value.trim()) {
+            addPostMessage();
         } else {
-            setError(true);
+            errorHandler(true);
         }
     };
     // обработчик для отправки поста по нажатию на enter
@@ -49,17 +71,21 @@ function Posts({ posts, addPostMessage }: PostsPropsType) {
                 <div>Мои посты</div>
                 {/* <textarea ref={textareaRef} /> */}
                 <UiTextarea
+                    refValue={textareaRef}
                     placeholder='Здесь будет текст вашего поста'
-                    value={textareaValue}
+                    // value={textareaValue}
+                    value={postTextareaValue}
                     onChange={textareaChangeHandler}
                     onKeyPress={addOnEnterPostHandler}
-                    errorMessage={error}
+                    // errorMessage={error}
+                    errorMessage={errorValue}
                 />
 
                 <button
                     className={styles.btn}
                     onClick={addPostHandler}
-                    disabled={error}
+                    // disabled={error}
+                    disabled={errorValue}
                 >
                     Добавить пост
                 </button>

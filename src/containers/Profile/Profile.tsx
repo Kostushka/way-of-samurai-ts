@@ -6,14 +6,28 @@ import styles from './Profile.module.css';
 
 type ProfilePropsType = {
     profilePage: ProfilePageType;
-    addPostMessage: (message: string) => void;
+    addPostMessage: () => void;
+    updatePostTextareaValue: (newText: string) => void;
+    errorHandler: (errorValue: boolean) => void;
 };
 
-function Profile({ profilePage, addPostMessage }: ProfilePropsType) {
+function Profile({
+    profilePage,
+    addPostMessage,
+    updatePostTextareaValue,
+    errorHandler,
+}: ProfilePropsType) {
     return (
         <>
             <ProfileInfo />
-            <Posts posts={profilePage.posts} addPostMessage={addPostMessage} />
+            <Posts
+                posts={profilePage.posts}
+                postTextareaValue={profilePage.postTextareaValue}
+                errorValue={profilePage.error}
+                addPostMessage={addPostMessage}
+                updatePostTextareaValue={updatePostTextareaValue}
+                errorHandler={errorHandler}
+            />
         </>
     );
 }

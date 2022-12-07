@@ -23,10 +23,10 @@ function Message({ messages, addDialogMessage }: MessagePropsType) {
     const addMessageHandler = () => {
         if (textareaValue.trim()) {
             addDialogMessage(textareaValue.trim());
-            setTextareaValue('');
         } else {
             setError(true);
         }
+        setTextareaValue('');
     };
     // на добавление сообщения по enter или перенос строки на shift enter
     const addOnEnterMessageHandler = (
