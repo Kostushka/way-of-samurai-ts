@@ -7,9 +7,13 @@ import user5Img from '../img/user5.jpg';
 import friend1Img from '../img/friend1.jpg';
 import friend2Img from '../img/friend2.jpg';
 import friend3Img from '../img/friend3.jpg';
-import { rerenderEntireTree } from '../render';
 import { MessagesType } from '../containers/Dialogs/type';
 import { PostType } from '../containers/Profile/Posts/type';
+
+let rerenderEntireTree = (state: StateType) => {};
+export const subscriber = (observer: (state: StateType) => void) => {
+    rerenderEntireTree = observer;
+};
 
 export const state: StateType = {
     dialogsPage: {
