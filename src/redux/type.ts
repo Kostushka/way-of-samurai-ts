@@ -22,3 +22,14 @@ export type StateType = {
     profilePage: ProfilePageType;
     friendsBlock: FriendsBlockType;
 };
+
+export type StoreType = {
+    _rerenderEntireTree: () => void;
+    subscriber: (observer: () => void) => void;
+    _state: StateType;
+    getState: () => StateType;
+    addDialogMessage: (message: string) => void;
+    addPostMessage: () => void;
+    updatePostTextareaValue: (newText: string) => void;
+    errorHandler: (errorValue: boolean) => void;
+};

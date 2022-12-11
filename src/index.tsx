@@ -1,28 +1,28 @@
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { state, subscriber } from './redux/state';
-import {
-    addDialogMessage,
-    addPostMessage,
-    errorHandler,
-    updatePostTextareaValue,
-} from './redux/state';
-import { StateType } from './redux/type';
+// import { state, subscriber } from './redux/state';
+// import {
+//     addDialogMessage,
+//     addPostMessage,
+//     errorHandler,
+//     updatePostTextareaValue,
+// } from './redux/state';
+import { store } from './redux/state';
 
-const rerenderEntireTree = (state: StateType) => {
+const rerenderEntireTree = () => {
     ReactDOM.render(
         <App
-            state={state}
-            addDialogMessage={addDialogMessage}
-            addPostMessage={addPostMessage}
-            updatePostTextareaValue={updatePostTextareaValue}
-            errorHandler={errorHandler}
+            state={store.getState()}
+            addDialogMessage={store.addDialogMessage.bind(store)}
+            addPostMessage={store.addPostMessage.bind(store)}
+            updatePostTextareaValue={store.updatePostTextareaValue.bind(store)}
+            errorHandler={store.errorHandler.bind(store)}
         />,
         document.getElementById('root')
     );
 };
 
-subscriber(rerenderEntireTree);
+store.subscriber(rerenderEntireTree);
 
-rerenderEntireTree(state);
+rerenderEntireTree();
