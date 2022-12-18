@@ -1,15 +1,16 @@
 import Dialog from './Dialog';
 import Message from './Message';
-import { DialogsPageType } from '../../redux/type';
+import { ActionType, DialogsPageType } from '../../redux/type';
 
 import styles from './Dialogs.module.css';
 
 type DialogsPropsType = {
     dialogsPage: DialogsPageType;
-    addDialogMessage: (message: string) => void;
+    dispatch: (action: ActionType) => void;
+    // addDialogMessage: (message: string) => void;
 };
 
-function Dialogs({ dialogsPage, addDialogMessage }: DialogsPropsType) {
+function Dialogs({ dialogsPage, dispatch }: DialogsPropsType) {
     return (
         <div className={styles.container}>
             <div className={styles.dialogs}>
@@ -20,7 +21,8 @@ function Dialogs({ dialogsPage, addDialogMessage }: DialogsPropsType) {
                 <h1 className={styles.header}>Сообщения</h1>
                 <Message
                     messages={dialogsPage.dialogMessages}
-                    addDialogMessage={addDialogMessage}
+                    dispatch={dispatch}
+                    // addDialogMessage={addDialogMessage}
                 />
             </div>
         </div>

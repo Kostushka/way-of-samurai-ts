@@ -5,28 +5,28 @@ import { PostType } from './type';
 
 import styles from './Posts.module.css';
 import UiTextarea from '../../../components/UiTextarea';
+import { ActionType } from '../../../redux/type';
 
 type PostsPropsType = {
     postTextareaValue: string;
     errorValue: boolean;
     posts: Array<PostType>;
-    addPostMessage: () => void;
-    updatePostTextareaValue: (newText: string) => void;
-    errorHandler: (errorValue: boolean) => void;
+    dispatch: (action: ActionType) => void;
+    // addPostMessage: () => void;
+    // updatePostTextareaValue: (newText: string) => void;
+    // errorHandler: (errorValue: boolean) => void;
 };
 
 function Posts({
     posts,
     errorValue,
-    addPostMessage,
     postTextareaValue,
-    updatePostTextareaValue,
-    errorHandler,
+    dispatch,
 }: PostsPropsType) {
     // стейт для поля ввода и ошибки
     // const [textareaValue, setTextareaValue] = useState<string>('');
     // const [error, setError] = useState<boolean>(false);
-    const textareaRef = createRef<any>();
+    const textareaRef = createRef<HTMLTextAreaElement>();
 
     // обработчик для поля ввода
     // const textareaChangeHandler = (value: string) => {
@@ -34,8 +34,15 @@ function Posts({
     //     setError(false);
     // };
     const textareaChangeHandler = () => {
-        updatePostTextareaValue(textareaRef.current.value);
-        errorHandler(false);
+        if (textareaRef.current) {
+            // updatePostTextareaValue(textareaRef.current.value);
+            dispatch({
+                type: 'UPDATE_POST',
+                newText: textareaRef.current.value,
+            });
+        }
+        // errorHandler(false);
+        dispatch({ type: 'ERROR_HANDLER', errorValue: false });
     };
     // обработчик для отправки поста по нажатию кнпоки
     // const addPostHandler = () => {
@@ -49,10 +56,13 @@ function Posts({
     const addPostHandler = () => {
         // addPostMessage(textareaRef.current.value);
         // textareaRef.current.value = '';
-        if (textareaRef.current.value.trim()) {
-            addPostMessage();
+
+        if (textareaRef.current?.value.trim()) {
+            // addPostMessage();
+            dispatch({ type: 'ADD_POST' });
         } else {
-            errorHandler(true);
+            // errorHandler(true);
+            dispatch({ type: 'ERROR_HANDLER', errorValue: true });
         }
     };
     // обработчик для отправки поста по нажатию на enter

@@ -15,11 +15,13 @@ import { PostType } from '../containers/Profile/Posts/type';
 //     rerenderEntireTree = observer;
 // };
 
+const ADD_MESSAGE = 'ADD_MESSAGE';
+const ADD_POST = 'ADD_POST';
+const UPDATE_POST = 'UPDATE_POST';
+const ERROR_HANDLER = 'ERROR_HANDLER';
+
 export const store: StoreType = {
     _rerenderEntireTree() {},
-    subscriber(observer: () => void) {
-        this._rerenderEntireTree = observer;
-    },
     _state: {
         dialogsPage: {
             dialogNames: [
@@ -56,36 +58,89 @@ export const store: StoreType = {
             ],
         },
     },
+
+    subscriber(observer: () => void) {
+        this._rerenderEntireTree = observer;
+    },
     getState() {
         return this._state;
     },
-    addDialogMessage(message: string) {
-        const newMessage: MessagesType = {
-            id: Math.random(),
-            message,
-        };
-        this._state.dialogsPage.dialogMessages.push(newMessage);
-        this._rerenderEntireTree();
+
+    dispatch(action) {
+        if (action.type === ADD_MESSAGE) {
+            if (action.message) {
+                const newMessage: MessagesType = {
+                    id: Math.random(),
+                    message: action.message,
+                };
+                this._state.dialogsPage.dialogMessages.push(newMessage);
+                this._rerenderEntireTree();
+            }
+        } else if (action.type === 'ADD_POST') {
+            const newPost: PostType = {
+                id: Math.random(),
+                message: this._state.profilePage.postTextareaValue,
+                likeCounts: 0,
+            };
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.postTextareaValue = '';
+            this._rerenderEntireTree();
+        } else if (action.type === 'UPDATE_POST') {
+            if (action.newText) {
+                this._state.profilePage.postTextareaValue = action.newText;
+                this._rerenderEntireTree();
+            }
+        } else if (action.type === 'ERROR_HANDLER') {
+            if (action.errorValue) {
+                this._state.profilePage.error = action.errorValue;
+                this._rerenderEntireTree();
+            }
+        }
     },
-    addPostMessage() {
-        const newPost: PostType = {
-            id: Math.random(),
-            message: this._state.profilePage.postTextareaValue,
-            likeCounts: 0,
-        };
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.postTextareaValue = '';
-        this._rerenderEntireTree();
-    },
-    updatePostTextareaValue(newText: string) {
-        this._state.profilePage.postTextareaValue = newText;
-        this._rerenderEntireTree();
-    },
-    errorHandler(errorValue: boolean) {
-        this._state.profilePage.error = errorValue;
-        this._rerenderEntireTree();
-    },
+
+    //     addDialogMessage(message: string) {
+    //         const newMessage: MessagesType = {
+    //             id: Math.random(),
+    //             message,
+    //         };
+    //         this._state.dialogsPage.dialogMessages.push(newMessage);
+    //         this._rerenderEntireTree();
+    //     },
+    //     addPostMessage() {
+    //         const newPost: PostType = {
+    //             id: Math.random(),
+    //             message: this._state.profilePage.postTextareaValue,
+    //             likeCounts: 0,
+    //         };
+    //         this._state.profilePage.posts.push(newPost);
+    //         this._state.profilePage.postTextareaValue = '';
+    //         this._rerenderEntireTree();
+    //     },
+    //     updatePostTextareaValue(newText: string) {
+    //         this._state.profilePage.postTextareaValue = newText;
+    //         this._rerenderEntireTree();
+    //     },
+    //     errorHandler(errorValue: boolean) {
+    //         this._state.profilePage.error = errorValue;
+    //         this._rerenderEntireTree();
+    //     },
 };
+
+export const addDialogMessageAC = (message: string) => ({
+    type: ADD_MESSAGE,
+    message,
+});
+export const addPostMessageAC = () => ({
+    type: ADD_POST,
+});
+export const updatePostTextareaValueAC = (newText: string) => ({
+    type: UPDATE_POST,
+    newText,
+});
+export const errorHandlerAC = (errorValue: boolean) => ({
+    type: ERROR_HANDLER,
+    errorValue,
+});
 
 // export const state: StateType = {
 //     dialogsPage: {

@@ -14,10 +14,11 @@ const rerenderEntireTree = () => {
     ReactDOM.render(
         <App
             state={store.getState()}
-            addDialogMessage={store.addDialogMessage.bind(store)}
-            addPostMessage={store.addPostMessage.bind(store)}
-            updatePostTextareaValue={store.updatePostTextareaValue.bind(store)}
-            errorHandler={store.errorHandler.bind(store)}
+            dispatch={store.dispatch.bind(store)}
+            // addDialogMessage={store.addDialogMessage.bind(store)}
+            // addPostMessage={store.addPostMessage.bind(store)}
+            // updatePostTextareaValue={store.updatePostTextareaValue.bind(store)}
+            // errorHandler={store.errorHandler.bind(store)}
         />,
         document.getElementById('root')
     );

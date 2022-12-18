@@ -23,13 +23,21 @@ export type StateType = {
     friendsBlock: FriendsBlockType;
 };
 
+export type ActionType = {
+    type: string;
+    message?: string;
+    newText?: string;
+    errorValue?: boolean;
+};
+
 export type StoreType = {
     _rerenderEntireTree: () => void;
     subscriber: (observer: () => void) => void;
     _state: StateType;
     getState: () => StateType;
-    addDialogMessage: (message: string) => void;
-    addPostMessage: () => void;
-    updatePostTextareaValue: (newText: string) => void;
-    errorHandler: (errorValue: boolean) => void;
+    dispatch: (action: ActionType) => void;
+    // addDialogMessage: (message: string) => void;
+    // addPostMessage: () => void;
+    // updatePostTextareaValue: (newText: string) => void;
+    // errorHandler: (errorValue: boolean) => void;
 };

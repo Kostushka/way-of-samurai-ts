@@ -3,24 +3,19 @@ import AppRouter from './components/AppRouter/AppRouter';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
-import { StateType } from './redux/type';
+import { ActionType, StateType } from './redux/type';
 import styles from './App.module.css';
 
 type AppPropsType = {
     state: StateType;
-    addDialogMessage: (message: string) => void;
-    addPostMessage: () => void;
-    updatePostTextareaValue: (newText: string) => void;
-    errorHandler: (errorValue: boolean) => void;
+    dispatch: (action: ActionType) => void;
+    // addDialogMessage: (message: string) => void;
+    // addPostMessage: () => void;
+    // updatePostTextareaValue: (newText: string) => void;
+    // errorHandler: (errorValue: boolean) => void;
 };
 
-function App({
-    state,
-    addDialogMessage,
-    addPostMessage,
-    updatePostTextareaValue,
-    errorHandler,
-}: AppPropsType) {
+function App({ state, dispatch }: AppPropsType) {
     return (
         <BrowserRouter basename='/way-of-samurai-ts/'>
             <div className={styles.container}>
@@ -29,10 +24,11 @@ function App({
                 <main className={styles.main}>
                     <AppRouter
                         state={state}
-                        addDialogMessage={addDialogMessage}
-                        addPostMessage={addPostMessage}
-                        updatePostTextareaValue={updatePostTextareaValue}
-                        errorHandler={errorHandler}
+                        dispatch={dispatch}
+                        // addDialogMessage={addDialogMessage}
+                        // addPostMessage={addPostMessage}
+                        // updatePostTextareaValue={updatePostTextareaValue}
+                        // errorHandler={errorHandler}
                     />
                 </main>
                 <Footer />
